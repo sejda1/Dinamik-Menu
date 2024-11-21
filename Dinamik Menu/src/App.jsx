@@ -1,4 +1,11 @@
 import { useState } from "react";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+} from "react-router-dom";
+import MenuPage from "./MenuPage";
+import AdminPage from "./AdminPage";
 
 const initialData = [
   {

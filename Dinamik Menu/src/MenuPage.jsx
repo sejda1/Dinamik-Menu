@@ -7,8 +7,8 @@ export default function MenuPage ({data}) {
     } 
     return (
     <>
-    <h1>"Burada Menu Gosterilecek"</h1>
-    <button onClick={handleClick} style={{fontSize:"3rem"}}>&#127869;</button>
+    <p>"Burada Menu Gosterilecek"</p>
+    <button onClick={handleClick} style={{fontSize:"3rem", borderRadius:"100px"}}>&#127869;</button>
     </>
 )
 }
