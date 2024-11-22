@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import {
   BrowserRouter,
   Route,
@@ -10,7 +10,7 @@ import AdminPage from "./AdminPage";
 const initialData = [
   {
     header: "KAHVALTI ve ATIŞTIRMALIKLAR",
-    image: "./public/breakfast.jpeg",
+    image: "./assets/breakfast.jpeg",
     Options: [
       {
         title: "Kahvaltı Tabağı",
@@ -37,7 +37,7 @@ const initialData = [
   },
   {
     header: "ÇORBA ve  SULU YEMEKLER",
-    image: "./public/corba.png",
+    image: "./src/assets/corba.png",
     Options: [
       {
         title: "(Günlük olarak çeşitleri değişkenlik göstermektedir.)",
@@ -57,7 +57,7 @@ const initialData = [
   },
   {
     header: "SALATALAR",
-    image: "./public/salata.jpeg",
+    image: "/assets/salata.jpeg",
     Options: [
       { title: "Çoban Salata", price: 80 },
       { title: "Mevsim Yeşillikleri", price: 80 },
@@ -65,7 +65,7 @@ const initialData = [
   },
   {
     header: "ANA YEMEKLER",
-    image: "./public/anayemek .png",
+    image: "/assets/anayemek.png",
     Options: [
       { title: "Mest Köfte", price: 350 },
       { title: "Kasap Köfte", price: 300 },
@@ -87,7 +87,7 @@ const initialData = [
   },
   {
     header: "BURGER",
-    image: "./public/burger.png",
+    image: "/assets/burger.png",
     Options: [
       {
         title: "Mest Burger",
@@ -108,7 +108,7 @@ const initialData = [
   },
   {
     header: "MEZELER",
-    image: "./public/meze .jpeg",
+    image: "/assets/meze.jpeg",
     Options: [
       { title: "Atom", price: 0 },
       { title: "Haydari", price: 0 },
@@ -121,7 +121,7 @@ const initialData = [
 
   {
     header: "TATLILAR",
-    image: "./public/tatlilar.png",
+    image: "/assets/tatlilar.png",
     Options: [
       { title: "San Sebastian", price: 150 },
       { title: "Çikolatalı San Sebastian", price: 200 },
@@ -136,7 +136,7 @@ const initialData = [
   },
   {
     header: "SICAK İÇECEKLER",
-    image: "./public/sicak-icecekler.jpeg",
+    image: "/assets/sicak-icecekler.jpeg",
     Options: [
       { title: "Americano", price: 70 },
       { title: "Espresso", price: 70 },
@@ -160,7 +160,7 @@ const initialData = [
   },
   {
     header: "SOĞUK KAHVELER",
-    image: "./public/ice-coffee.jpeg",
+    image: "/assets/ice-coffee.jpeg",
     Options: [
       { title: "Ice Latte", price: 100 },
       { title: "Ice Karamel Latte", price: 110 },
@@ -172,7 +172,7 @@ const initialData = [
   },
   {
     header: "SERİNLETİCİ İÇECEKLER",
-    image: "./public/soguk-icecekler .png",
+    image: "/assets/soguk-icecekler .png",
     Options: [
       { title: "Ice Chocolate", price: 110 },
       { title: "Ice Chai Tea Latte", price: 100 },
@@ -191,7 +191,7 @@ const initialData = [
   },
   {
     header: "MEŞRUBATLAR",
-    image: "./public/mesrubatt.jpeg",
+    image: "/assets/mesrubatt.jpeg",
     Options: [
       { title: "Su", price: 15 },
       { title: "Sade Soda", price: 20 },
@@ -211,7 +211,7 @@ const initialData = [
   },
   {
     header: "ŞARKÜTERİ ÜRÜNLERİ",
-    image: "./public/sarkuteri.jpeg",
+    image: "/assets/sarkuteri.jpeg",
     Options: [
       { title: "(Belirtilen fiyatlar 1 Kg içindir.)", price: "kg/" },
       { title: "Sucuk", price: 600 },
@@ -233,7 +233,7 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<MenuPage />} />
+      <Route path="/" element={<MenuPage initialData={initialData}/>} />
       <Route path="/mest" element={<AdminPage initialData={initialData}/>} />
     </Routes>
   </BrowserRouter>

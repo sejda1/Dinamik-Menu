@@ -1,0 +1,121 @@
+/* Genel Stil */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fdfbf7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .menu-container {
+    width: 800px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  /* Menü Başlık */
+  .menu-header {
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .menu-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .menu-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 2px;
+  }
+  
+  /* Kategoriler */
+  .category-section {
+    margin-top: 20px;
+  }
+  
+  .category-header {
+    font-size: 20px;
+    font-weight: bold;
+    color: #444;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .options-list {
+    margin-top: 10px;
+  }
+  
+  .option-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ddd;
+  }
+  
+  .option-item:last-child {
+    border-bottom: none;
+  }
+  
+  .option-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .option-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .option-description {
+    font-size: 14px;
+    color: #777;
+    margin-top: 5px;
+  }
+  
+  /* Footer */
+  .menu-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .footer-text {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .order-button {
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .order-button:hover {
+    background-color: #555;
+  }
