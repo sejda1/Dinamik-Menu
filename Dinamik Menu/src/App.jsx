@@ -229,12 +229,12 @@ const initialData = [
 ];
 
 function App() {
-const [data, setData] = useState(initialData)
+
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<MenuPage data={data} />} />
-      <Route path="/mest" element={<AdminPage data={data} setData={setData}/>} />
+      <Route path="/" element={<MenuPage />} />
+      <Route path="/mest" element={<AdminPage initialData={initialData}/>} />
     </Routes>
   </BrowserRouter>
      

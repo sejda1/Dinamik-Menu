@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import * as XLSX from "xlsx";
 
-export default function AdminPage({data, setData}) {
+export default function AdminPage({initialData}) {
   /*  1. Dropdown Select Box olustur. Burada datanin headerlari gosterilsin.
         2. Dropdownda secilen headera gore, o sectiondaki optionslari acan bir excel tablosu olustur.
         3. Dropdown ve Excel tablosu ortak state kullansin. (header secimine gore)
         4. Excel tablosuna veri ekleme, veri silme ve veri degistirme ozellikleri ekle.
+        5. Veri degisikliklerini kaydetmek icin localStorage kullan.
      */
+const[data, setData] = useState(() => {
+    const savedData = localStorage.getItem("data");
+    return savedData? JSON.parse(savedData) : initialData;
+})
+
+useEffect (()=>{
+    localStorage.setItem("data", JSON.stringify(data));
+},[data]);
 
   const [selectedHeader, setSelectedHeader] = useState(data[0].header);
   const handleChange = (e) => {
@@ -161,7 +171,7 @@ const handleEditOption = (index, field, value) => {
             </tr>
           ))}
           {/* Yeni satir girisi*/}
-          <tr tyle={{ border: "1px solid #F48FB1"}}>
+          <tr style={{ border: "1px solid #F48FB1"}}>
             <td>
                 <input
                 type='text'

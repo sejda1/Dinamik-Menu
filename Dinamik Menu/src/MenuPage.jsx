@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
-export default function MenuPage ({data}) {
+export default function MenuPage () {
     let navigate = useNavigate();
     const handleClick = () => {
         navigate("/mest")
