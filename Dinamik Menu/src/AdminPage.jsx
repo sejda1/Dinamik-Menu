@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function AdminPage({ data }) {
+export default function AdminPage({data, setData}) {
   /*  1. Dropdown Select Box olustur. Burada datanin headerlari gosterilsin.
         2. Dropdownda secilen headera gore, o sectiondaki optionslari acan bir excel tablosu olustur.
         3. Dropdown ve Excel tablosu ortak state kullansin. (header secimine gore)
@@ -25,9 +25,22 @@ export default function AdminPage({ data }) {
     XLSX.writeFile(workbook, `${selectedHeader}.xlsx`);
   };
 
+  // Bir ogeyi silme
+  const handleDelete = (index) => {
+    setData((prevData) => {
+      return prevData.map((section) => {
+        if (section.header === selectedHeader) {
+          const updatedOptions = [...section.Options];
+          updatedOptions.splice(index, 1); // silmek icin
+          return { ...section, Options: updatedOptions }; // guncellenmis Options ile doner
+        }
+        return section; // selectedHeaderla eslesmediyse sectionlar degistirilmez
+      });
+    });
+  };
+
   return (
     <>
-      <p>Sadece Admin Gorebilir</p>
       {/* Dropdown Select Box */}
       <div>
         <label>
@@ -58,6 +71,9 @@ export default function AdminPage({ data }) {
               <td>{option.desc || "N/A"}</td>
               <td>{option.price}</td>
               <td>{option.halfPrice || "N/A"}</td>
+              <td>
+                <button onClick={() => handleDelete(index)}>Sil</button>
+              </td>
             </tr>
           ))}
         </tbody>

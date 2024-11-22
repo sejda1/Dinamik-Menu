@@ -233,8 +233,8 @@ const [data, setData] = useState(initialData)
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<MenuPage data={data}/>} />
-      <Route path="/mest" element={<AdminPage data={data}/>} />
+      <Route path="/" element={<MenuPage data={data} />} />
+      <Route path="/mest" element={<AdminPage data={data} setData={setData}/>} />
     </Routes>
   </BrowserRouter>
      
