@@ -1,22 +1,22 @@
-
 import {
   BrowserRouter,
   Route,
   Routes,
 } from "react-router-dom";
+import {useState, useEffect} from 'react';
 import MenuPage from "./MenuPage";
 import AdminPage from "./AdminPage";
 
 const initialData = [
   {
     header: "KAHVALTI ve ATIŞTIRMALIKLAR",
-    image: ".src/assets/breakfast.jpeg",
+    image: "/assets/breakfast.jpeg",
     Options: [
       {
         title: "Kahvaltı Tabağı",
-        desc: "Beyaz peynir, Kaşar peyniri, Tel peynir, Siyah zeytin, Yeşil zeytin, Domates, Salatalık, Omlet, Salam, Reçel, Tereyağı, Acuka, Bal, Kavurma </br> (1 adet çay ile servis edilir)",
+        desc: 'Beyaz peynir, Kaşar peyniri, Tel peynir, Siyah zeytin, Yeşil zeytin, Domates, Salatalık, Omlet, Salam, Reçel, Tereyağı, Acuka, Bal, Kavurma  (1 adet çay ile servis edilir)',
         price: 300,
-      },
+      }, 
       { title: "Sahanda Omlet", price: 120 },
       { title: "Sahanda Kaşarlı Yumurta", price: 130 },
       { title: "Sahanda Sucuklu Yumurta", price: 150 },
@@ -37,10 +37,10 @@ const initialData = [
   },
   {
     header: "ÇORBA ve  SULU YEMEKLER",
-    image: "./src/assets/corba.png",
+    image: "/assets/corba.png",
     Options: [
       {
-        title: "(Günlük olarak çeşitleri değişkenlik göstermektedir.)",
+        desc: "(Günlük olarak çeşitleri değişkenlik göstermektedir.)",
         price: "Tam",
         halfPrice: "Yarım",
       },
@@ -51,13 +51,13 @@ const initialData = [
       { title: "Musakka-Karnıyarık", price: 160, halfPrice: 100 },
       { title: "İzmir Köfte", price: 160, halfPrice: 120 },
       { title: "Sebzeli Köfte", price: 160, halfPrice: 120 },
-      { title: "Kuru Fasulye", price: 100, halfPrice: " " + 70 },
-      { title: "Pilav", price: 50, halfPrice: " " + 40 },
+      { title: "Kuru Fasulye", price: 100, halfPrice: 70 },
+      { title: "Pilav", price: 50, halfPrice: 40 },
     ],
   },
   {
     header: "SALATALAR",
-    image: ".src/assets/salata.jpeg",
+    image: "/assets/salata.jpeg",
     Options: [
       { title: "Çoban Salata", price: 80 },
       { title: "Mevsim Yeşillikleri", price: 80 },
@@ -65,7 +65,7 @@ const initialData = [
   },
   {
     header: "ANA YEMEKLER",
-    image: ".src/assets/anayemek.png",
+    image: "/assets/anayemek.png",
     Options: [
       { title: "Mest Köfte", price: 350 },
       { title: "Kasap Köfte", price: 300 },
@@ -87,7 +87,7 @@ const initialData = [
   },
   {
     header: "BURGER",
-    image: ".src/assets/burger.png",
+    image: "/assets/burger.png",
     Options: [
       {
         title: "Mest Burger",
@@ -108,7 +108,7 @@ const initialData = [
   },
   {
     header: "MEZELER",
-    image: ".src/assets/meze .jpeg",
+    image: "/assets/meze.jpeg",
     Options: [
       { title: "Atom", price: 0 },
       { title: "Haydari", price: 0 },
@@ -121,7 +121,7 @@ const initialData = [
 
   {
     header: "TATLILAR",
-    image: ".src/assets/tatlilar.png",
+    image: "/assets/tatlilar.png",
     Options: [
       { title: "San Sebastian", price: 150 },
       { title: "Çikolatalı San Sebastian", price: 200 },
@@ -130,13 +130,13 @@ const initialData = [
       { title: "İbiza", price: 125 },
       { title: "Supangle", price: 125 },
       { title: "Tiramisu", price: 150 },
-      { title: "Sütlaç", price: "" },
-      { title: "Dondurma (1 Top)", price: 30 },
+      { title: "Sütlaç", price: 0 },
+      { title: "Dondurma", desc:"(1 top)", price: 30 },
     ],
   },
   {
     header: "SICAK İÇECEKLER",
-    image: ".src/assets/sicak-iceceker.jpeg",
+    image: "/assets/sicak-iceceker.jpeg",
     Options: [
       { title: "Americano", price: 70 },
       { title: "Espresso", price: 70 },
@@ -160,7 +160,7 @@ const initialData = [
   },
   {
     header: "SOĞUK KAHVELER",
-    image: ".src/assets/ice-coffee.jpeg",
+    image: "/assets/ice-coffee.jpeg",
     Options: [
       { title: "Ice Latte", price: 100 },
       { title: "Ice Karamel Latte", price: 110 },
@@ -172,7 +172,7 @@ const initialData = [
   },
   {
     header: "SERİNLETİCİ İÇECEKLER",
-    image: ".src/assets/soguk-icecekler .png",
+    image: "/assets/soguk-icecekler.png",
     Options: [
       { title: "Ice Chocolate", price: 110 },
       { title: "Ice Chai Tea Latte", price: 100 },
@@ -191,7 +191,7 @@ const initialData = [
   },
   {
     header: "MEŞRUBATLAR",
-    image: ".src/assets/mesrubatt.jpeg",
+    image: "/assets/mesrubatt.jpeg",
     Options: [
       { title: "Su", price: 15 },
       { title: "Sade Soda", price: 20 },
@@ -211,7 +211,7 @@ const initialData = [
   },
   {
     header: "ŞARKÜTERİ ÜRÜNLERİ",
-    image: ".src/assets/sarkuteri.jpeg",
+    image: "/assets/sarkuteri.jpeg",
     Options: [
       { title: "(Belirtilen fiyatlar 1 Kg içindir.)", price: "kg/" },
       { title: "Sucuk", price: 600 },
@@ -229,17 +229,23 @@ const initialData = [
 ];
 
 function App() {
+  const [data, setData] = useState(() => {
+    const savedData = localStorage.getItem("data");
+    return savedData ? JSON.parse(savedData) : initialData;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(data));
+  }, [data]);
 
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<MenuPage initialData={initialData}/>} />
-      <Route path="/mest" element={<AdminPage initialData={initialData}/>} />
-    </Routes>
-  </BrowserRouter>
-     
-    
-  )
+      <Routes>
+        <Route path="/" element={<MenuPage initialData={data} />} />
+        <Route path="/mest" element={<AdminPage initialData={data} setData={setData} />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

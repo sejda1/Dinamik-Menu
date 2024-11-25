@@ -1,30 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import * as XLSX from "xlsx";
 
-export default function AdminPage({ initialData }) {
+export default function AdminPage({ initialData, setData }) {
     /*    1. Dropdown Select Box olustur. Burada datanin headerlari gosterilsin.
           2. Dropdownda secilen headera gore, o sectiondaki optionslari acan bir excel tablosu olustur.
           3. Dropdown ve Excel tablosu ortak state kullansin. (header secimine gore)
           4. Excel tablosuna veri ekleme, veri silme ve veri degistirme ozellikleri ekle.
           5. Veri degisikliklerini kaydetmek icin localStorage kullan.
        */
-    const [data, setData] = useState(() => {
-        const savedData = localStorage.getItem("data");
-        return savedData ? JSON.parse(savedData) : initialData;
-    });
 
-    useEffect(() => {
-        localStorage.setItem("data", JSON.stringify(data));
-    }, [data]);
-
-    const [selectedHeader, setSelectedHeader] = useState(data[0].header);
+    const [selectedHeader, setSelectedHeader] = useState(initialData[0].header);
     const handleChange = (e) => {
         setSelectedHeader(e.target.value);
     };
 
     // Secilen headera gore Optionslari alma
     const selectedOptions =
-        data.find((section) => section.header === selectedHeader)?.Options || [];
+        initialData.find((section) => section.header === selectedHeader)?.Options || [];
 
     // Excel
     const exportToExcel = () => {
@@ -110,7 +102,7 @@ export default function AdminPage({ initialData }) {
                 <label>
                     Seciniz : {""}
                     <select value={selectedHeader} onChange={handleChange}>
-                        {data.map((section) => (
+                        {initialData.map((section) => (
                             <option key={section.header} value={section.header}>
                                 {section.header}
                             </option>
