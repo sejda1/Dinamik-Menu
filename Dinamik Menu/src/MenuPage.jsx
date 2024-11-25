@@ -16,14 +16,14 @@ export default function MenuPage({ initialData }) {
           <img className="menu-logo" src="./src/assets/logo.jpeg" alt="Mest-logo" />
           <h1>MEST MENU</h1>
         </header>
-        {initialData.map((category, index) => (
-          <div key={index} className="category-section">
-            <div className="category-header">
-              <img src={category.image} alt={category.header} className="category-image" />
-              <p className="category-title">{category.header}</p>
+        {initialData.map((section, index) => (
+          <div key={index} className="section">
+            <div className="section-header">
+              <img src={section.image} alt={section.header} className="section-image" />
+              <p className="section-title">{section.header}</p>
             </div>
             <div className="options-list">
-              {category.Options.map((option, index) => (
+              {section.Options.map((option, index) => (
                 <div key={index} className="option-item">
                   <div className="option-details">
                     <h3 className="option-title">{option.title}</h3>

@@ -10,7 +10,7 @@ import AdminPage from "./AdminPage";
 const initialData = [
   {
     header: "KAHVALTI ve ATIŞTIRMALIKLAR",
-    image: "./assets/breakfast.jpeg",
+    image: ".src/assets/breakfast.jpeg",
     Options: [
       {
         title: "Kahvaltı Tabağı",
@@ -57,7 +57,7 @@ const initialData = [
   },
   {
     header: "SALATALAR",
-    image: "/assets/salata.jpeg",
+    image: ".src/assets/salata.jpeg",
     Options: [
       { title: "Çoban Salata", price: 80 },
       { title: "Mevsim Yeşillikleri", price: 80 },
@@ -65,7 +65,7 @@ const initialData = [
   },
   {
     header: "ANA YEMEKLER",
-    image: "/assets/anayemek.png",
+    image: ".src/assets/anayemek.png",
     Options: [
       { title: "Mest Köfte", price: 350 },
       { title: "Kasap Köfte", price: 300 },
@@ -87,7 +87,7 @@ const initialData = [
   },
   {
     header: "BURGER",
-    image: "/assets/burger.png",
+    image: ".src/assets/burger.png",
     Options: [
       {
         title: "Mest Burger",
@@ -108,7 +108,7 @@ const initialData = [
   },
   {
     header: "MEZELER",
-    image: "/assets/meze.jpeg",
+    image: ".src/assets/meze .jpeg",
     Options: [
       { title: "Atom", price: 0 },
       { title: "Haydari", price: 0 },
@@ -121,7 +121,7 @@ const initialData = [
 
   {
     header: "TATLILAR",
-    image: "/assets/tatlilar.png",
+    image: ".src/assets/tatlilar.png",
     Options: [
       { title: "San Sebastian", price: 150 },
       { title: "Çikolatalı San Sebastian", price: 200 },
@@ -136,7 +136,7 @@ const initialData = [
   },
   {
     header: "SICAK İÇECEKLER",
-    image: "/assets/sicak-icecekler.jpeg",
+    image: ".src/assets/sicak-iceceker.jpeg",
     Options: [
       { title: "Americano", price: 70 },
       { title: "Espresso", price: 70 },
@@ -160,7 +160,7 @@ const initialData = [
   },
   {
     header: "SOĞUK KAHVELER",
-    image: "/assets/ice-coffee.jpeg",
+    image: ".src/assets/ice-coffee.jpeg",
     Options: [
       { title: "Ice Latte", price: 100 },
       { title: "Ice Karamel Latte", price: 110 },
@@ -172,7 +172,7 @@ const initialData = [
   },
   {
     header: "SERİNLETİCİ İÇECEKLER",
-    image: "/assets/soguk-icecekler .png",
+    image: ".src/assets/soguk-icecekler .png",
     Options: [
       { title: "Ice Chocolate", price: 110 },
       { title: "Ice Chai Tea Latte", price: 100 },
@@ -191,7 +191,7 @@ const initialData = [
   },
   {
     header: "MEŞRUBATLAR",
-    image: "/assets/mesrubatt.jpeg",
+    image: ".src/assets/mesrubatt.jpeg",
     Options: [
       { title: "Su", price: 15 },
       { title: "Sade Soda", price: 20 },
@@ -211,7 +211,7 @@ const initialData = [
   },
   {
     header: "ŞARKÜTERİ ÜRÜNLERİ",
-    image: "/assets/sarkuteri.jpeg",
+    image: ".src/assets/sarkuteri.jpeg",
     Options: [
       { title: "(Belirtilen fiyatlar 1 Kg içindir.)", price: "kg/" },
       { title: "Sucuk", price: 600 },

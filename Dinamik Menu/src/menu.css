@@ -1,121 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* Genel Stil */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fdfbf7;
-    color: #333;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-  }
-  
-  .menu-container {
+    
+    border: 2px solid #ca925d;
+}
+
+.menu-container {
     width: 800px;
-    background-color: #fff;
-    border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(white, #e9e5df 90%, white);
     padding: 20px;
-  }
-  
-  /* Menü Başlık */
-  .menu-header {
+}
+
+/* Menü Başlık */
+.menu-header {
     text-align: center;
+    font-family: "Dancing Script";
     padding-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .menu-logo {
+    color:#59443a;
+}
+
+.menu-logo {
     width: 100px;
-    height: auto;
     margin-bottom: 10px;
-  }
-  
-  .menu-title {
+    border-radius: 100px;
+    width: 15rem;
+    height: 15rem;
+}
+
+.menu-title {
+    font-family: "Dancing Script";
+    color: hsl(29, 76%, 43%);
     font-size: 24px;
     font-weight: bold;
-    color: #333;
     letter-spacing: 2px;
-  }
-  
-  /* Kategoriler */
-  .category-section {
+}
+
+/* Kategoriler */
+.section {
     margin-top: 20px;
-  }
-  
-  .category-header {
-    font-size: 20px;
-    font-weight: bold;
-    color: #444;
-    text-transform: uppercase;
+}
+
+.section-header {
+    font-family: "Dancing Script";
+    font-size: 16px;
+    color: #59443a;
+    font-weight: 800;
     text-align: center;
-    margin-bottom: 15px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .options-list {
+    margin: 0 auto;
+}
+
+.section-image {
+    border-radius: 50%;
+    margin: 5px;
+    width: 3rem;
+    height: 3rem;
+}
+
+.options-list {
     margin-top: 10px;
-  }
-  
-  .option-item {
+}
+
+.option-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px dashed #ddd;
-  }
-  
-  .option-item:last-child {
+}
+
+.option-item:last-child {
     border-bottom: none;
-  }
-  
-  .option-title {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .option-price {
-    font-size: 16px;
-    font-weight: bold;
-    color: #555;
-  }
-  
-  .option-description {
-    font-size: 14px;
-    color: #777;
-    margin-top: 5px;
-  }
-  
-  /* Footer */
-  .menu-footer {
+}
+
+.option-title {
+    font-family: "Montserrat";
+    font-style: italic;
+    color: #ca925d;
+    font-size: 12px;
+}
+
+.option-price {
+    color: #8d8984;
+    font-size: 12px;
+}
+
+.price-half {
+    margin-right: 2rem;
+}
+
+.option-description {
+    font-family: "Prompt";
+    font-size: 10px;
+    color: #8d8984;
+}
+
+/* Footer */
+.menu-footer {
     text-align: center;
     margin-top: 20px;
     padding-top: 10px;
     border-top: 1px solid #ddd;
-  }
-  
-  .footer-text {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 10px;
-  }
-  
-  .order-button {
-    background-color: #333;
-    color: #fff;
-    font-size: 14px;
+}
+
+.footer-text {
+    text-align: center;
+    font-family: "Dancing Script";
+    font-size: 40px;
+    color:#59443a;
+    margin-top: 40px;
+}
+
+.order-button {
+
+    color: #8d8984;
+    font-size: 50px;
     font-weight: bold;
     padding: 8px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 100px;
     cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .order-button:hover {
-    background-color: #555;
-  }
+    background-color: #e9e5df;
+}
