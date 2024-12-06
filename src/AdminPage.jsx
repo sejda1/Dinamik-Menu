@@ -17,8 +17,8 @@ export default function AdminPage({ initialData, setData }) {
                           PropTypes.shape({
                               title: PropTypes.string,
                               desc: PropTypes.string,
-                              price: PropTypes.number,
-                              halfPrice: PropTypes.number,
+                              price: PropTypes.oneOfType([PropTypes.number, PropTypes.string]), 
+                              halfPrice:PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
                           })
                       ),
                   })

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* Genel Stil */
 .menu-page {
@@ -10,7 +9,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    border:ghostwhite;
+    border: ghostwhite;
 }
 
 .menu-container {
@@ -26,15 +25,38 @@
     text-align: center;
     font-family: "Dancing Script";
     padding-bottom: 10px;
+    animation: fadeIn 1s ease-out;
 }
 
-.menu-logo {
-    width: 100px;
-    margin-bottom: 10px;
-    border-radius: 100px;
+/* Madeni Para Gibi Dönen Logo Animasyonu */
+@keyframes rotateCoin {
+    0% {
+      transform: rotateY(0deg); /* Başlangıçta logo düz */
+    }
+    50% {
+      transform: rotateY(180deg); /* Yarım dönüş */
+    }
+    100% {
+      transform: rotateY(360deg); /* Tam dönüş */
+    }
+  }
+  
+  .menu-logo {
     width: 15rem;
     height: 15rem;
-}
+    border-radius: 1000px;
+    transition: transform 0.5s ease; /* Yumuşak geçiş için */
+    transform-style: preserve-3d; /* 3D dönüş efekti için */
+    transform-origin: center; /* Dönüş merkezi ortada */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Logo etrafında hafif gölge */
+    perspective: 1000px; /* Perspektif mesafesini ayarlama */
+  }
+  
+  .menu-logo:hover {
+    animation: rotateCoin 2s infinite linear; /* Madeni para gibi dönüş animasyonu */
+  }
+  
+  
 
 .menu-title {
     font-family: "Dancing Script";
@@ -42,11 +64,18 @@
     font-size: 24px;
     font-weight: bold;
     letter-spacing: 2px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.menu-title:hover {
+    color: #ca925d;
+    text-decoration: underline;
 }
 
 /* Kategoriler */
 .section {
     margin-top: 20px;
+    animation: fadeIn 1s ease-out;
 }
 
 .section-header {
@@ -56,13 +85,21 @@
     font-weight: 800;
     text-align: center;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .section-image {
     border-radius: 50%;
-    margin: 5px;
+    margin-right: 10px;
     width: 3rem;
     height: 3rem;
+    transition: transform 0.3s ease;
+}
+
+.section-image:hover {
+    transform: scale(1.2);
 }
 
 .options-list {
@@ -75,10 +112,16 @@
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px dashed #ddd;
+    transition: background-color 0.3s ease, border-left 0.3s ease;
 }
 
 .option-item:last-child {
     border-bottom: none;
+}
+
+.option-item:hover {
+    background-color: #f9f4ea;
+    border-left: 5px solid #ca925d;
 }
 
 .option-title {
@@ -86,11 +129,23 @@
     font-style: italic;
     color: #ca925d;
     font-size: 12px;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.option-title:hover {
+    color: #59443a;
+    font-size: 14px;
 }
 
 .option-price {
     color: #8d8984;
     font-size: 12px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.option-price:hover {
+    color: #ca925d;
+    transform: scale(1.1);
 }
 
 .price-half {
@@ -115,16 +170,49 @@
     text-align: center;
     font-family: "Dancing Script";
     font-size: 40px;
-    color:#59443a;
+    color: #59443a;
     margin-top: 40px;
+    animation: floating 3s ease-in-out infinite;
 }
 
 .order-button {
-
-    background-color: #e9e5df ;
+    background-color: #e9e5df;
     font-size: 100px;
     padding: 10px 30px;
     border: none;
     border-radius: 100px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.order-button:hover {
+    background-color: #ca925d;
+    transform: scale(1.1);
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Sayfa kaydırmayı yumuşatmak */
+html {
+    scroll-behavior: smooth;
 }
