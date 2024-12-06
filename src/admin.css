@@ -1,0 +1,175 @@
+/* Genel Stil */
+body {
+    font-family: Arial, sans-serif;
+    margin: 2rem 1rem;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* AdminPage */
+.admin-page {
+    margin: 2rem 1rem;
+    padding: 20px;
+}
+
+/* Dropdown Select Box */
+select {
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #880E4F;
+    border-radius: 5px;
+    background-color: #fff;
+    margin: 10px 0px;
+    cursor: pointer;
+    width: 100%; /* Dropdown genişliğini tam olarak ayarlıyoruz */
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #880E4F;
+    margin: 0 10px;
+    display: inline-block; /* Etiketi satırda tutuyoruz */
+    white-space: nowrap; /* Taşma olursa metni yeni satıra geçirmemek için */
+    max-width: 100%; /* Ekran boyutuna göre etiketin genişliğini sınırlıyoruz */
+}
+
+/* Excel Tablosu */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #D81B60;
+}
+
+th {
+    background-color: #F8BBD0;
+    color: #880E4F;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+td input {
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #D81B60;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+/* Yeni Satır Ekleme */
+input[type="text"] {
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid #F48FB1;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+button {
+    background-color: #F06292;
+    color: white;
+    font-size: 14px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #880E4F;
+}
+
+/* Excele Aktar Butonu */
+button[type="button"] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #E91E63;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="button"]:hover {
+    background-color: #C2185B;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    /* Genel Admin Page container */
+    .admin-page {
+        padding: 15px;
+    }
+
+    /* Dropdown select kutusunu küçült */
+    select {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Tabloyu responsive hale getir */
+    table {
+        font-size: 12px;
+        overflow-x: auto;
+        display: block;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    /* Input alanlarını responsive yap */
+    td input {
+        font-size: 12px;
+    }
+
+    /* Yeni Satır Ekleme kısmı */
+    input[type="text"] {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    /* Excel aktar butonunun boyutunu ayarla */
+    button[type="button"] {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-page {
+        padding: 10px;
+    }
+
+    select, input[type="text"], button {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    button[type="button"] {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+}

@@ -1,6 +1,7 @@
 import { useState} from "react";
 import * as XLSX from "xlsx";
 import PropTypes from 'prop-types';
+import "./admin.css";
 
 export default function AdminPage({ initialData, setData }) {
     /*    1. Dropdown Select Box olustur. Burada datanin headerlari gosterilsin.
@@ -116,9 +117,9 @@ export default function AdminPage({ initialData, setData }) {
     return (
         <>
             {/* Dropdown Select Box */}
-            <div style={{ border: "1px solid 	#880E4F" }}>
+            <div>
                 <label>
-                    Seciniz : {""}
+                    Seçiniz : {""}
                     <select value={selectedHeader} onChange={handleChange}>
                         {initialData.map((section) => (
                             <option key={section.header} value={section.header}>
