@@ -242,7 +242,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MenuPage initialData={data} />} />
-        <Route path="/mest" element={<AdminPage initialData={data} setData={setData} />} />
+        <Route path="/admin" element={<AdminPage initialData={data} setData={setData} />} />
       </Routes>
     </BrowserRouter>
   );

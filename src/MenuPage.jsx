@@ -1,13 +1,7 @@
 import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
 import "./menu.css";
 
 export default function MenuPage({ initialData = [] }) {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate("/mest");
-  };
 
   return (
     <div className="menu-page">
@@ -50,7 +44,7 @@ export default function MenuPage({ initialData = [] }) {
         ))}
         <footer className="menu-footer">
           <p className="footer-text">Afiyet Olsun!</p>
-          <button className="order-button" onClick={handleClick}>
+          <button className="order-button">
             &#127869;
           </button>
         </footer>
