@@ -93,7 +93,7 @@
 .section-header {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Sol hizalama */
+    justify-content: flex-start; 
     font-family: "Dancing Script";
     font-size: 16px;
     color: #59443a;
@@ -102,24 +102,24 @@
     gap:10px;
 }
 
-/* Section Image: Align image to the left with margin on the left */
+
 .section-image {
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
-    margin-left: 20px; /* Soldan biraz boşluk */
+    margin-left: 20px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     border: 3px solid rgba(0, 0.1, 0.1, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
-/* Section Title: Align it to the right and provide some spacing */
+
 .section-title {
     font-family: "Dancing Script";
     font-size: 16px;
     color: #59443a;
     font-weight: 800;
-    text-align: center; /* Sağ hizalama */
+    text-align: center; 
 
 }
 
@@ -306,36 +306,35 @@ html {
 @media print {
     /* Sayfa Boyutu */
     @page {
-        size: A4; /* A4 boyutu */
-        margin: 20mm; /* Kenar boşlukları */
+        size: A4;
+        margin: 20mm; 
     }
 
     /* Genel Ayarlar */
     body {
-        font-family: "Prompt", sans-serif; /* Yazı tipi */
-        font-size: 12px; /* Genel font boyutu */
-        color: #000; /* Yazıcı dostu renkler */
-        background: none; /* Arka plan rengini kaldır */
+        font-family: "Prompt", sans-serif; 
+        font-size: 12px; 
+        background: none; 
     }
 
     .menu-container {
-        width: 100%; /* Tam genişlik */
-        border: none; /* Yazıcı kenarlarını kaldır */
-        box-shadow: none; /* Gölgeyi kaldır */
-        padding: 10mm; /* Sayfa içeriği için uygun boşluk */
-        background: none; /* Arka planları temizle */
+        width: 100%; 
+        border: none; 
+        box-shadow: none; 
+        padding: 10mm; 
+        background: none; 
     }
 
     .menu-logo {
         width: 90%; 
         height: 90%;
-        margin: auto auto; /* Ortala */
-        display: block; /* Görünürlük için */
+        margin: auto auto; 
+        display: block; 
     }
 
     .menu-title {
-        font-size: 72px; /* Kategori başlık boyutu */
-        text-align: center; /* Soldan hizalı */
+        font-size: 72px; 
+        text-align: center; 
         margin-top: 5mm; /* Bölüm sonu boşluk */
     }
 

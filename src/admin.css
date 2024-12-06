@@ -21,7 +21,7 @@ select {
     background-color: #fff;
     margin: 10px 0px;
     cursor: pointer;
-    width: 100%; /* Dropdown genişliğini tam olarak ayarlıyoruz */
+    width: 100%;
 }
 
 label {
@@ -29,9 +29,9 @@ label {
     font-weight: bold;
     color: #880E4F;
     margin: 0 10px;
-    display: inline-block; /* Etiketi satırda tutuyoruz */
-    white-space: nowrap; /* Taşma olursa metni yeni satıra geçirmemek için */
-    max-width: 100%; /* Ekran boyutuna göre etiketin genişliğini sınırlıyoruz */
+    display: inline-block; 
+    white-space: nowrap; 
+    max-width: 100%; 
 }
 
 /* Excel Tablosu */
@@ -104,52 +104,6 @@ button[type="button"]:hover {
 }
 
 /* Responsive Tasarım */
-@media (max-width: 768px) {
-    /* Genel Admin Page container */
-    .admin-page {
-        padding: 15px;
-    }
-
-    /* Dropdown select kutusunu küçült */
-    select {
-        width: 100%;
-        padding: 10px;
-    }
-
-    /* Tabloyu responsive hale getir */
-    table {
-        font-size: 12px;
-        overflow-x: auto;
-        display: block;
-    }
-
-    th, td {
-        padding: 8px;
-    }
-
-    /* Input alanlarını responsive yap */
-    td input {
-        font-size: 12px;
-    }
-
-    /* Yeni Satır Ekleme kısmı */
-    input[type="text"] {
-        font-size: 12px;
-        padding: 6px;
-    }
-
-    button {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-
-    /* Excel aktar butonunun boyutunu ayarla */
-    button[type="button"] {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
-}
-
 @media (max-width: 480px) {
     .admin-page {
         padding: 10px;
