@@ -1,5 +1,6 @@
 import { useState} from "react";
 import * as XLSX from "xlsx";
+import PropTypes from 'prop-types';
 
 export default function AdminPage({ initialData, setData }) {
     /*    1. Dropdown Select Box olustur. Burada datanin headerlari gosterilsin.
@@ -8,6 +9,23 @@ export default function AdminPage({ initialData, setData }) {
           4. Excel tablosuna veri ekleme, veri silme ve veri degistirme ozellikleri ekle.
           5. Veri degisikliklerini kaydetmek icin localStorage kullan.
        */
+          AdminPage.propTypes = {
+              initialData: PropTypes.arrayOf(
+                  PropTypes.shape({
+                      header: PropTypes.string.isRequired, // header bir string olmalı
+                      Options: PropTypes.arrayOf(
+                          PropTypes.shape({
+                              title: PropTypes.string,
+                              desc: PropTypes.string,
+                              price: PropTypes.number,
+                              halfPrice: PropTypes.number,
+                          })
+                      ),
+                  })
+              ).isRequired, // initialData bir array olmalı ve zorunlu
+              setData: PropTypes.func.isRequired, // setData bir fonksiyon olmalı ve zorunlu
+          };
+          
 
     const [selectedHeader, setSelectedHeader] = useState(initialData[0].header);
     const handleChange = (e) => {
@@ -213,7 +231,7 @@ export default function AdminPage({ initialData, setData }) {
                 style={{ marginTop: "1rem", padding: "1rem 2rem", cursor: "pointer" }}
                 onClick={exportToExcel}
             >
-                Excel'e Aktar
+                Excele Aktar
             </button>
         </>
     );

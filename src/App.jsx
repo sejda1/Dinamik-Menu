@@ -136,7 +136,7 @@ const initialData = [
   },
   {
     header: "SICAK İÇECEKLER",
-    image: "/assets/sicak-iceceker.jpeg",
+    image: "/assets/sicakicecekler.jpeg",
     Options: [
       { title: "Americano", price: 70 },
       { title: "Espresso", price: 70 },
@@ -172,7 +172,7 @@ const initialData = [
   },
   {
     header: "SERİNLETİCİ İÇECEKLER",
-    image: "/assets/soguk-icecekler.png",
+    image: "/assets/sogukicecekler.png",
     Options: [
       { title: "Ice Chocolate", price: 110 },
       { title: "Ice Chai Tea Latte", price: 100 },
