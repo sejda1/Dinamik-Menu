@@ -31,41 +31,32 @@
 /* Madeni Para Gibi Dönen Logo Animasyonu */
 @keyframes rotateCoin {
     0% {
-        transform: rotateY(0deg);
-        /* Başlangıçta logo düz */
+      transform: rotateY(0deg); /* Başlangıçta logo düz */
     }
-
     50% {
-        transform: rotateY(180deg);
-        /* Yarım dönüş */
+      transform: rotateY(180deg); /* Yarım dönüş */
     }
-
     100% {
-        transform: rotateY(360deg);
-        /* Tam dönüş */
+      transform: rotateY(360deg); /* Tam dönüş */
     }
-}
-
-.menu-logo {
+  }
+  
+  .menu-logo {
     width: 15rem;
     height: 15rem;
     border-radius: 1000px;
-    transition: transform 0.5s ease;
-    /* Yumuşak geçiş için */
-    transform-style: preserve-3d;
-    /* 3D dönüş efekti için */
-    transform-origin: center;
-    /* Dönüş merkezi ortada */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    /* Logo etrafında hafif gölge */
-    perspective: 1000px;
-    /* Perspektif mesafesini ayarlama */
-}
-
-.menu-logo:hover {
-    animation: rotateCoin 2s infinite linear;
-    /* Madeni para gibi dönüş animasyonu */
-}
+    transition: transform 0.5s ease; /* Yumuşak geçiş için */
+    transform-style: preserve-3d; /* 3D dönüş efekti için */
+    transform-origin: center; /* Dönüş merkezi ortada */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Logo etrafında hafif gölge */
+    perspective: 1000px; /* Perspektif mesafesini ayarlama */
+  }
+  
+  .menu-logo:hover {
+    animation: rotateCoin 2s infinite linear; /* Madeni para gibi dönüş animasyonu */
+  }
+  
+  
 
 .menu-title {
     font-family: "Dancing Script";
@@ -87,48 +78,39 @@
     animation: fadeIn 1s ease-out;
 }
 
-
 .section-header {
-    display: block; /* Yan yana yerine alt alta görünmesi için */
-    text-align: center; /* Ortalanmış görünüm */
     font-family: "Dancing Script";
     font-size: 16px;
     color: #59443a;
     font-weight: 800;
-    margin-bottom: 10px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .section-image {
-    display: block; 
-    margin: 0 auto 10px; 
     border-radius: 50%;
+    margin-right: 10px;
     width: 3rem;
     height: 3rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    border: 3px solid rgba(0, 0.1, 0.1, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-.section-title {
-    display: block; 
-    font-family: "Dancing Script";
-    font-size: 16px;
-    color: #59443a;
-    font-weight: 800;
-    text-align: center; 
-    margin-top: 10px; 
+.section-image:hover {
+    transform: scale(1.2);
 }
-
 
 .options-list {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .option-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 0;
+    padding: 10px 0;
     border-bottom: 1px dashed #ddd;
     transition: background-color 0.3s ease, border-left 0.3s ease;
 }
@@ -194,9 +176,10 @@
 }
 
 .order-button {
-    background-color: #faf8f6;
+    background-color: #e9e5df;
     font-size: 100px;
     padding: 10px 30px;
+    border: none;
     border-radius: 100px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -212,7 +195,6 @@
     0% {
         opacity: 0;
     }
-
     100% {
         opacity: 1;
     }
@@ -222,11 +204,9 @@
     0% {
         transform: translateY(-5px);
     }
-
     50% {
         transform: translateY(5px);
     }
-
     100% {
         transform: translateY(-5px);
     }
@@ -235,69 +215,6 @@
 /* Sayfa kaydırmayı yumuşatmak */
 html {
     scroll-behavior: smooth;
-}
-@media (max-width: 480px) {
-    .menu-container {
-        width: 95%; 
-        padding: 10px; 
-        border-radius: 5px; 
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
-    }
-
-    .menu-logo {
-        width: 8rem; 
-        height: 8rem;
-    }
-
-    .menu-title {
-        font-size: 18px; 
-    }
-
-    .section {
-        margin-top: 10px; 
-    }
-
-    .section-header {
-        font-size: 14px; 
-        margin-bottom: 8px;
-    }
-
-    .section-image {
-        width: 2rem; 
-        height: 2rem;
-        margin-right: 5px;
-    }
-
-    .options-list {
-        margin-top: 3px; 
-    }
-
-    .option-item {
-        padding: 8px 0;
-    }
-
-    .option-title {
-        font-size: 10px;
-    }
-
-    .option-price {
-        font-size: 10px; 
-    }
-
-    .option-description {
-        font-size: 9px;
-    }
-
-    .footer-text {
-        font-size: 20px; 
-        margin-top: 20px;
-    }
-
-    .order-button {
-        font-size: 80px; 
-        padding: 5px 15px;
-        border-radius: 30px;
-    }
 }
 @media print {
     /* Sayfa Boyutu */
@@ -390,5 +307,94 @@ html {
     }
     .order-button {
         display: none;
+    }
+}
+/* Mobil için optimize */
+@media (max-width: 768px) {
+    .menu-container {
+        padding: 15px;
+    }
+    .menu-logo {
+        width: 10rem;
+        height: 10rem;
+    }
+    .menu-title {
+        font-size: 20px;
+    }
+    .section-header {
+        font-size: 14px;
+    }
+    .option-title {
+        font-size: 10px;
+    }
+    .option-price {
+        font-size: 10px;
+    }
+    .option-description {
+        font-size: 9px;
+    }
+    .order-button {
+        font-size: 80px;
+        padding: 8px 20px;
+    }
+}
+
+/* Tablet için optimize */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .menu-container {
+        padding: 18px;
+    }
+    .menu-logo {
+        width: 12rem;
+        height: 12rem;
+    }
+    .menu-title {
+        font-size: 22px;
+    }
+    .section-header {
+        font-size: 15px;
+    }
+    .option-title {
+        font-size: 11px;
+    }
+    .option-price {
+        font-size: 11px;
+    }
+    .option-description {
+        font-size: 10px;
+    }
+    .order-button {
+        font-size: 90px;
+        padding: 10px 25px;
+    }
+}
+
+/* Masaüstü (Geniş ekranlar) */
+@media (min-width: 1025px) {
+    .menu-container {
+        width: 800px;
+    }
+    .menu-logo {
+        width: 15rem;
+        height: 15rem;
+    }
+    .menu-title {
+        font-size: 24px;
+    }
+    .section-header {
+        font-size: 16px;
+    }
+    .option-title {
+        font-size: 12px;
+    }
+    .option-price {
+        font-size: 12px;
+    }
+    .option-description {
+        font-size: 10px;
+    }
+    .order-button {
+        font-size: 100px;
+        padding: 10px 30px;
     }
 }
