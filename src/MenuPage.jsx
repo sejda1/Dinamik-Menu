@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import "./menu.css";
 import { useNavigate } from "react-router-dom";
 
-export default function MenuPage({ initialData = [] }) {
+export default function MenuPage({ data}) {
     const navigate = useNavigate();
     const handleClick = () => {
         navigate("/admin");
@@ -14,7 +14,7 @@ export default function MenuPage({ initialData = [] }) {
           <img className="menu-logo" src="/assets/logo.jpeg" alt="Mest-logo" />
           <h1 className="menu-title">MEST MENU</h1>
         </header>
-        {initialData.map((section) => (
+        {data.map((section) => (
           <div key={section.header} className="section">
             <div className="section-header">
               <img
@@ -59,7 +59,7 @@ export default function MenuPage({ initialData = [] }) {
 
 // PropTypes kullanımı ile gelen veri tiplerini kontrol ediyoruz.
 MenuPage.propTypes = {
-  initialData: PropTypes.arrayOf(
+  data: PropTypes.arrayOf(
     PropTypes.shape({
       header: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,

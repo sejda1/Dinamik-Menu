@@ -1,9 +1,10 @@
 import { useState} from "react";
 import * as XLSX from "xlsx";
 import PropTypes from 'prop-types';
+import {useNavigate} from "react-router-dom";
 import "./admin.css";
 
-export default function AdminPage({ initialData, setData }) {
+export default function AdminPage({ data, setData }) {
     /*    1. Dropdown Select Box olustur. Burada datanin headerlari gosterilsin.
           2. Dropdownda secilen headera gore, o sectiondaki optionslari acan bir excel tablosu olustur.
           3. Dropdown ve Excel tablosu ortak state kullansin. (header secimine gore)
@@ -11,7 +12,7 @@ export default function AdminPage({ initialData, setData }) {
           5. Veri degisikliklerini kaydetmek icin localStorage kullan.
        */
           AdminPage.propTypes = {
-              initialData: PropTypes.arrayOf(
+              data: PropTypes.arrayOf(
                   PropTypes.shape({
                       header: PropTypes.string.isRequired, // header bir string olmalı
                       Options: PropTypes.arrayOf(
@@ -23,19 +24,19 @@ export default function AdminPage({ initialData, setData }) {
                           })
                       ),
                   })
-              ).isRequired, // initialData bir array olmalı ve zorunlu
+              ).isRequired, // data bir array olmalı ve zorunlu
               setData: PropTypes.func.isRequired, // setData bir fonksiyon olmalı ve zorunlu
           };
           
 
-    const [selectedHeader, setSelectedHeader] = useState(initialData[0].header);
+    const [selectedHeader, setSelectedHeader] = useState(data[0].header);
     const handleChange = (e) => {
         setSelectedHeader(e.target.value);
     };
 
     // Secilen headera gore Optionslari alma
     const selectedOptions =
-        initialData.find((section) => section.header === selectedHeader)?.Options || [];
+        data.find((section) => section.header === selectedHeader)?.Options || [];
 
     // Excel
     const exportToExcel = () => {
@@ -114,6 +115,16 @@ export default function AdminPage({ initialData, setData }) {
         );
     };
 
+    const navigate = useNavigate();
+    const backtoMenu = () => {
+        navigate("/");
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        localStorage.setItem("data", JSON.stringify(data));
+    };
+
     return (
         <>
             {/* Dropdown Select Box */}
@@ -121,7 +132,7 @@ export default function AdminPage({ initialData, setData }) {
                 <label>
                     Seçiniz : {""}
                     <select value={selectedHeader} onChange={handleChange}>
-                        {initialData.map((section) => (
+                        {data.map((section) => (
                             <option key={section.header} value={section.header}>
                                 {section.header}
                             </option>
@@ -229,11 +240,15 @@ export default function AdminPage({ initialData, setData }) {
                 </tbody>
             </table>
             <button
-                style={{ marginTop: "1rem", padding: "1rem 2rem", cursor: "pointer" }}
+                
                 onClick={exportToExcel}
             >
                 Excele Aktar
             </button>
+            <button onSubmit={handleSubmit}>Kaydet</button>
+            <button onClick={backtoMenu}>Menuye Don</button>
+
+
         </>
     );
 }

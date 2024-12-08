@@ -220,7 +220,7 @@ html {
     /* Sayfa Boyutu */
     @page {
         size: A4;
-        margin: 20mm; 
+        margin: 20mm; /* Kenar boşluklarını ayarlayın */
     }
 
     /* Genel Ayarlar */
@@ -230,35 +230,45 @@ html {
         background: none; 
     }
 
+    /* Menü Container Ayarları */
     .menu-container {
-        width: 100%; 
-        border: none; 
-        box-shadow: none; 
-        padding: 10mm; 
-        background: none; 
+        width: 100%; /* Menü genişliğini tam sayfaya yay */
+        padding: 10mm; /* Menü içine boşluk ekle */
+        background: none; /* Arka planı kaldır */
+        border: none; /* Sınırları kaldır */
+        box-shadow: none; /* Gölgeyi kaldır */
+    }
+
+    /* Menü Başlık ve Logo */
+    .menu-header {
+        display: flex;
+        flex-direction: column;
+        margin: 20mm 20mm;
+        width: 100%;
+        height: 100%;
+        text-align: center;
     }
 
     .menu-logo {
-        width: 90%; 
-        height: 90%;
-        margin: auto auto; 
-        display: block; 
+        width: 80%; /* Logo boyutunu büyüt */
+        height: 80%; /* Logo boyutunu büyüt */
     }
 
     .menu-title {
-        font-size: 72px; 
-        text-align: center; 
-        margin-top: 5mm; /* Bölüm sonu boşluk */
+        font-size: 72px; /* Başlık boyutunu büyük yap */
+        text-align: center;
+        margin-top: 5mm; 
     }
 
+    /* Bölümler */
     .section {
         page-break-inside: avoid; /* Sayfa arasında bölünmeyi engelle */
-        margin-bottom: 10mm; 
+        margin-bottom: 10mm; /* Bölüm arası boşluk */
     }
 
     .section-header {
         font-size: 16px; /* Bölüm başlık boyutu */
-        margin-bottom: 5mm;
+        margin-bottom: 5mm; /* Başlık altı boşluk */
     }
 
     .options-list {
@@ -268,21 +278,21 @@ html {
     .option-item {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 2mm; /* Elemanlar arasi bosluk */
-        border: none; 
+        margin-bottom: 2mm; /* Elemanlar arası boşluk */
+        border: none; /* Kenarlık yok */
         padding: 0;
     }
 
     .option-title {
-        font-size: 12px; 
+        font-size: 12px; /* Seçenek başlığı boyutu */
     }
 
     .option-price {
-        font-size: 12px;
+        font-size: 12px; /* Fiyat boyutu */
     }
 
     .option-description {
-        font-size: 10px; 
+        font-size: 10px; /* Açıklama boyutu */
     }
 
     /* Footer */
@@ -292,7 +302,7 @@ html {
     }
 
     .footer-text {
-        font-size: 36px;
+        font-size: 36px; /* Footer yazı boyutu */
     }
 
     /* Görsellerin Gizlenmesi veya Optimize Edilmesi */
@@ -305,10 +315,12 @@ html {
     .page-break {
         page-break-before: always; /* Yeni sayfa başlatır */
     }
+
     .order-button {
-        display: none;
+        display: none; /* Yazdırma sırasında butonları gizle */
     }
 }
+
 /* Mobil için optimize */
 @media (max-width: 768px) {
     .menu-container {
@@ -336,6 +348,7 @@ html {
     .order-button {
         font-size: 80px;
         padding: 8px 20px;
+        border-radius: 50%;
     }
 }
 
@@ -366,6 +379,7 @@ html {
     .order-button {
         font-size: 90px;
         padding: 10px 25px;
+        border-radius:50%;
     }
 }
 

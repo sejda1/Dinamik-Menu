@@ -241,8 +241,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MenuPage initialData={data} />} />
-        <Route path="/admin" element={<AdminPage initialData={data} setData={setData} />} />
+        <Route path="/" element={<MenuPage data={data} />} />
+        <Route path="/admin" element={<AdminPage data={data} setData={setData} />} />
       </Routes>
     </BrowserRouter>
   );
