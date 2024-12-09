@@ -1,33 +1,26 @@
-import { useState} from "react";
+import { useState } from "react";
 import * as XLSX from "xlsx";
-import PropTypes from 'prop-types';
-import {useNavigate} from "react-router-dom";
+import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 import "./admin.css";
 
 export default function AdminPage({ data, setData }) {
-    /*    1. Dropdown Select Box olustur. Burada datanin headerlari gosterilsin.
-          2. Dropdownda secilen headera gore, o sectiondaki optionslari acan bir excel tablosu olustur.
-          3. Dropdown ve Excel tablosu ortak state kullansin. (header secimine gore)
-          4. Excel tablosuna veri ekleme, veri silme ve veri degistirme ozellikleri ekle.
-          5. Veri degisikliklerini kaydetmek icin localStorage kullan.
-       */
-          AdminPage.propTypes = {
-              data: PropTypes.arrayOf(
-                  PropTypes.shape({
-                      header: PropTypes.string.isRequired, // header bir string olmalı
-                      Options: PropTypes.arrayOf(
-                          PropTypes.shape({
-                              title: PropTypes.string,
-                              desc: PropTypes.string,
-                              price: PropTypes.oneOfType([PropTypes.number, PropTypes.string]), 
-                              halfPrice:PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-                          })
-                      ),
-                  })
-              ).isRequired, // data bir array olmalı ve zorunlu
-              setData: PropTypes.func.isRequired, // setData bir fonksiyon olmalı ve zorunlu
-          };
-          
+    AdminPage.propTypes = {
+        data: PropTypes.arrayOf(
+            PropTypes.shape({
+                header: PropTypes.string.isRequired, // header bir string olmalı
+                Options: PropTypes.arrayOf(
+                    PropTypes.shape({
+                        title: PropTypes.string,
+                        desc: PropTypes.string,
+                        price: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+                        halfPrice: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+                    })
+                ),
+            })
+        ).isRequired, // data bir array olmalı ve zorunlu
+        setData: PropTypes.func.isRequired, // setData bir fonksiyon olmalı ve zorunlu
+    };
 
     const [selectedHeader, setSelectedHeader] = useState(data[0].header);
     const handleChange = (e) => {
@@ -67,7 +60,8 @@ export default function AdminPage({ data, setData }) {
         halfPrice: "",
         desc: "",
     });
-    //Yeni veri ekleme
+
+    // Yeni veri ekleme
     const handleAddOption = () => {
         setData((prevData) =>
             prevData.map((section) => {
@@ -78,8 +72,8 @@ export default function AdminPage({ data, setData }) {
                             ...section.Options, // onceki optionslari koru
                             {
                                 ...newOption,
-                                price: Number(newOption.price),
-                                halfPrice: Number(newOption.halfPrice),
+                                price: newOption.price,
+                                halfPrice: newOption.halfPrice,
                             },
                         ],
                     };
@@ -95,21 +89,35 @@ export default function AdminPage({ data, setData }) {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
+
+        let updatedValue = value;
+
+        // Eğer 'price' ya da 'halfPrice' alanlarından biri sayısal bir değer olacaksa,
+        // geçerli bir sayı olup olmadığını kontrol et
+        if ((name === "price" || name === "halfPrice") && (isNaN(value) || value.trim() === "")) {
+            updatedValue = ""; // Geçerli sayı değilse, boş bir string ile değiştir
+        }
+
         setNewOption((prev) => ({
             ...prev,
-            [name]: value,
+            [name]: updatedValue,
         }));
     };
+
     const handleEditOption = (index, field, value) => {
+        // Sayısal olmayan değerleri kontrol et
+        const numericValue =
+            field === "price" || field === "halfPrice" ? (isNaN(value) ? "" : value) : value;
+
         setData((prevData) =>
             prevData.map((section) =>
                 section.header === selectedHeader
                     ? {
-                        ...section,
-                        Options: section.Options.map((option, idx) =>
-                            idx === index ? { ...option, [field]: value } : option
-                        ),
-                    }
+                          ...section,
+                          Options: section.Options.map((option, idx) =>
+                              idx === index ? { ...option, [field]: numericValue } : option
+                          ),
+                      }
                     : section
             )
         );
@@ -140,6 +148,7 @@ export default function AdminPage({ data, setData }) {
                     </select>
                 </label>
             </div>
+
             {/* Excel Tablosu */}
             <table style={{ marginTop: "10px", borderCollapse: "collapse", width: "100%" }}>
                 <thead>
@@ -157,7 +166,7 @@ export default function AdminPage({ data, setData }) {
                             <td>
                                 <input
                                     type="text"
-                                    value={option.title}
+                                    value={option.title || ""} // Boş bir string ile başlat
                                     onChange={(e) =>
                                         handleEditOption(index, "title", e.target.value)
                                     }
@@ -166,7 +175,7 @@ export default function AdminPage({ data, setData }) {
                             <td>
                                 <input
                                     type="text"
-                                    value={option.desc}
+                                    value={option.desc || ""} // Boş bir string ile başlat
                                     onChange={(e) =>
                                         handleEditOption(index, "desc", e.target.value)
                                     }
@@ -174,8 +183,8 @@ export default function AdminPage({ data, setData }) {
                             </td>
                             <td>
                                 <input
-                                    type="number"
-                                    value={option.price}
+                                    type="text" // type'ı text yapıyoruz
+                                    value={option.price || ""} // Boş bir string ile başlat
                                     onChange={(e) =>
                                         handleEditOption(index, "price", e.target.value)
                                     }
@@ -183,8 +192,8 @@ export default function AdminPage({ data, setData }) {
                             </td>
                             <td>
                                 <input
-                                    type="number"
-                                    value={option.halfPrice}
+                                    type="text" // type'ı text yapıyoruz
+                                    value={option.halfPrice || ""} // Boş bir string ile başlat
                                     onChange={(e) =>
                                         handleEditOption(index, "halfPrice", e.target.value)
                                     }
@@ -195,7 +204,8 @@ export default function AdminPage({ data, setData }) {
                             </td>
                         </tr>
                     ))}
-                    {/* Yeni satir girisi*/}
+
+                    {/* Yeni satir girisi */}
                     <tr style={{ border: "1px solid #F48FB1" }}>
                         <td>
                             <input
@@ -217,7 +227,7 @@ export default function AdminPage({ data, setData }) {
                         </td>
                         <td>
                             <input
-                                type="text"
+                                type="text" // type'ı text yapıyoruz
                                 name="price"
                                 placeholder=""
                                 value={newOption.price}
@@ -226,7 +236,7 @@ export default function AdminPage({ data, setData }) {
                         </td>
                         <td>
                             <input
-                                type="text"
+                                type="text" // type'ı text yapıyoruz
                                 name="halfPrice"
                                 placeholder=""
                                 value={newOption.halfPrice}
@@ -239,16 +249,10 @@ export default function AdminPage({ data, setData }) {
                     </tr>
                 </tbody>
             </table>
-            <button
-                
-                onClick={exportToExcel}
-            >
-                Excele Aktar
-            </button>
-            <button onSubmit={handleSubmit}>Kaydet</button>
+
+            <button onClick={exportToExcel}>Excele Aktar</button>
+            <button onClick={handleSubmit}>Kaydet</button>
             <button onClick={backtoMenu}>Menuye Don</button>
-
-
         </>
     );
 }
