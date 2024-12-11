@@ -16,7 +16,7 @@ export default function HomePage() {
     <a href="https://www.instagram.com/mestigneada/" target="_blank" rel="noopener noreferrer">
         <i className="fa fa-instagram" style={{fontSize: "24px"}}></i>
       </a>
-      <video autoPlay loop muted style={{width: "100%", }}>
+      <video autoPlay loop muted style={{width: "100%", height:"100vh",}}>
         <source src={gokyuzu} type="video/mp4" />
       </video>      
     </>
