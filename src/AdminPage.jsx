@@ -136,8 +136,8 @@ export default function AdminPage({ data, setData }) {
     return (
         <>
             {/* Dropdown Select Box */}
-            <div>
-                <label>
+            <div className="select">
+                <label className="adminlabeli">
                     Seçiniz : {""}
                     <select value={selectedHeader} onChange={handleChange}>
                         {data.map((section) => (
@@ -150,7 +150,7 @@ export default function AdminPage({ data, setData }) {
             </div>
 
             {/* Excel Tablosu */}
-            <table style={{ marginTop: "10px", borderCollapse: "collapse", width: "100%" }}>
+            <table className="table">
                 <thead>
                     <tr style={{ border: "1px solid #AD1457" }}>
                         <th>Başlık</th>
@@ -250,9 +250,9 @@ export default function AdminPage({ data, setData }) {
                 </tbody>
             </table>
 
-            <button onClick={exportToExcel}>Excele Aktar</button>
-            <button onClick={handleSubmit}>Kaydet</button>
-            <button onClick={backtoMenu}>Menuye Don</button>
+            <button className="adminbutton" onClick={exportToExcel}>Excele Aktar</button>
+            <button className="adminbutton" onClick={handleSubmit}>Kaydet</button>
+            <button className="adminbutton" onClick={backtoMenu}>Menuye Don</button>
         </>
     );
 }

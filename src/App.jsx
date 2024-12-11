@@ -5,7 +5,9 @@ import {
 } from "react-router-dom";
 import {useState, useEffect} from 'react';
 import MenuPage from "./MenuPage";
+import Login from "./Login";
 import AdminPage from "./AdminPage";
+import HomePage from "./HomePage";
 
 const initialData = [
   {
@@ -241,7 +243,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MenuPage data={data} />} />
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/menu" element={<MenuPage data={data} />} />
+        <Route path="/login" element={<Login/>} />
         <Route path="/admin" element={<AdminPage data={data} setData={setData} />} />
       </Routes>
     </BrowserRouter>

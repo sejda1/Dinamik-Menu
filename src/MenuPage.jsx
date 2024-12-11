@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function MenuPage({ data}) {
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate("/admin");
+        navigate("/login");
     };
   return (
     <div className="menu-page">
