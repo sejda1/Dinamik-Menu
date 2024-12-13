@@ -2,7 +2,7 @@ import { useState } from "react";
 import * as XLSX from "xlsx";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
-import "./admin.css";
+import styles from "./admin.module.css";
 
 export default function AdminPage({ data, setData }) {
     AdminPage.propTypes = {

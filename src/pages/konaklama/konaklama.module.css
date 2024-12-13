@@ -1,0 +1,48 @@
+.konaklama {
+    background-color: #f9f5eb;
+    padding: 20px;
+    color: #4b3f3b;
+    font-family: 'Dancing Script', cursive;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #4b3f3b;
+    padding: 10px 0;
+}
+
+.navLink {
+    text-decoration: none;
+    color: #f4f1e6;
+    font-size: 1.2rem;
+    padding: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.navLink:hover {
+    color: #d1a054;
+}
+
+.navLinkActive {
+    color: #d1a054;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #d1a054;
+    margin: 20px 0;
+}
+
+.aciklama {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #4b3f3b;
+    line-height: 1.6;
+    background-color: #f4f1e6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}

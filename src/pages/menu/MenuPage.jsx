@@ -1,51 +1,61 @@
 import PropTypes from "prop-types";
-import "./menu.css";
+import styles from "./menu.module.css";
 import { useNavigate } from "react-router-dom";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default function MenuPage({ data}) {
-    const navigate = useNavigate();
-    const handleClick = () => {
-        navigate("/login");
-    };
+export default function MenuPage({ data }) {
+  const navigate = useNavigate();
+
+  // Sayfayı başa kaydırma işlevi
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Yumuşak kaydırma
+    });
+  };
+
+  const handleClick = () => {
+    navigate("/login");
+  };
+
   return (
-    <div className="menu-page">
-      <div className="menu-container">
-      <div className="navbar" style={{backgroundColor:"#e9e5df", margin:"0 0 10px 0"}}>
-        <Link to="/" style={{color:"#4b3f3b"}}>Anasayfa</Link>
-        <Link to="/menu" style={{color:"#4b3f3b"}}>Menü</Link>
-        <Link to="/konaklama" style={{color:"#4b3f3b"}}>Konaklama</Link>
-      </div>
-        <header className="menu-header">
-          <img className="menu-logo" src="/assets/logo.jpeg" alt="Mest-logo" />
-          <h1 className="menu-title">MEST MENU</h1>
-          
+    <div className={styles.menuPage}>
+      <div className={styles.menuContainer}>
+        <div className={styles.navbar}>
+          <Link to="/" className={styles.navLink}>Anasayfa</Link>
+          <Link to="/menu" className={styles.navLink}>Menü</Link>
+          <Link to="/konaklama" className={styles.navLink}>Konaklama</Link>
+        </div>
+        <header className={styles.menuHeader}>
+          <img className={styles.menuLogo} src="/assets/logo.jpeg" alt="Mest-logo" />
+          <h1 className={styles.menuTitle}>MEST MENU</h1>
         </header>
+
         {data.map((section) => (
-          <div key={section.header} className="section">
-            <div className="section-header">
+          <div key={section.header} className={styles.section}>
+            <div className={styles.sectionHeader}>
               <img
-                className="section-image"
+                className={styles.sectionImage}
                 src={section.image}
                 alt={section.header}
               />
-              <p className="section-title">{section.header}</p>
+              <p className={styles.sectionTitle}>{section.header}</p>
             </div>
-            <div className="options-list">
+            <div className={styles.optionsList}>
               {section.Options.map((option, index) => (
-                <div key={index} className="option-item">
-                  <div className="option-details">
-                    <h3 className="option-title">{option.title}</h3>
+                <div key={index} className={styles.optionItem}>
+                  <div className={styles.optionDetails}>
+                    <h3 className={styles.optionTitle}>{option.title}</h3>
                     {option.desc && (
-                      <p className="option-description">{option.desc}</p>
+                      <p className={styles.optionDescription}>{option.desc}</p>
                     )}
                   </div>
-                  <div className="option-price">
+                  <div className={styles.optionPrice}>
                     {option.halfPrice && (
-                      <span className="price-half">{option.halfPrice}₺</span>
+                      <span className={styles.priceHalf}>{option.halfPrice}₺</span>
                     )}
                     {option.price && (
-                      <span className="price-full">{option.price}₺</span>
+                      <span className={styles.priceFull}>{option.price}₺</span>
                     )}
                   </div>
                 </div>
@@ -53,10 +63,20 @@ export default function MenuPage({ data}) {
             </div>
           </div>
         ))}
-        <footer className="menu-footer">
-          <p className="footer-text">Afiyet Olsun!</p>
-          <button className="order-button" onClick={handleClick}>
+
+        <footer className={styles.menuFooter}>
+          <p className={styles.footerText}>Afiyet Olsun!</p>
+          <button 
+            className={styles.orderButton} 
+            onClick={handleClick}
+          >
             &#127869;
+          </button>
+          <button 
+            className={styles.scrollToTopButton} 
+            onClick={handleScrollToTop}
+          >
+            ↑ 
           </button>
         </footer>
       </div>

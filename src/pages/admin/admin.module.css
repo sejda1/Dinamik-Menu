@@ -1,6 +1,5 @@
-
 /* Genel Stil */
-body {
+:global(body) {
     font-family: Arial, sans-serif;
     margin: 2rem 1rem;
     padding: 0;
@@ -8,7 +7,7 @@ body {
 }
 
 /* AdminPage */
-.admin-page {
+.adminPage {
     margin: 2rem 1rem;
     padding: 20px;
 }
@@ -25,7 +24,7 @@ body {
     width: 100%;
 }
 
-.adminlabeli {
+.adminLabel {
     font-size: 18px;
     font-weight: bold;
     color: #880E4F;
@@ -43,7 +42,7 @@ body {
     background-color: #fff;
 }
 
-.table th, td {
+.table th, .table td {
     padding: 12px 15px;
     text-align: center;
     border: 1px solid #D81B60;
@@ -65,7 +64,7 @@ body {
     margin: 5px 0;
 }
 
-.adminbutton {
+.adminButton {
     background-color: #F06292;
     color: white;
     font-size: 14px;
@@ -74,22 +73,20 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin : 0.5rem 0.5rem;
+    margin: 0.5rem 0.5rem;
 }
 
-.adminbutton:hover {
+.adminButton:hover {
     background-color: #880E4F;
 }
 
-
-
 /* Responsive Tasarım */
 @media (max-width: 480px) {
-    .admin-page {
+    .adminPage {
         padding: 10px;
     }
 
-    .select,  .adminbutton {
+    .select, .adminButton {
         width: 100%;
         font-size: 12px;
     }
@@ -98,12 +95,12 @@ body {
         font-size: 12px;
     }
 
-   .table th, .table td {
+    .table th, .table td {
         padding: 6px;
     }
 
-    .adminbutton {
+    .adminButton {
         font-size: 12px;
         padding: 10px 15px;
     }
-}
+} 

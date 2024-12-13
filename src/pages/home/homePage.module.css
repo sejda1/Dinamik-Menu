@@ -1,5 +1,10 @@
+/* Başlangıçta kullandığınız font importları ve genel stil doğru */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
 /* Genel Stil */
-body {
+.body {
     font-family: 'Dancing Script', cursive;
     background-color: #f4f1e6;
     color: #4b3f3b;
@@ -23,14 +28,14 @@ body {
     animation: logoBounce 2s infinite ease-in-out;
 }
 
-.header h1 {
+.headerTitle {
     font-size: 3rem;
     color: #d1a054;
     margin-top: 10px;
     font-family: 'Dancing Script', cursive;
 }
 
-/* Logo Animasyonu */
+/* Logo Animation */
 @keyframes logoBounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
@@ -43,28 +48,29 @@ body {
     background-color: #4b3f3b;
     padding: 10px 0;
     width: 100%;
-    margin:0;
+    margin: 0;
 }
 
-.navbar a {
+.navLink {
     text-decoration: none;
     color: #f4f1e6;
     font-size: 1.2rem;
     padding: 0 15px;
     transition: color 0.3s ease;
-    font-family: "Font Awesome 5 Free"
+    font-family: "Font Awesome 5 Free";
 }
 
-.navbar a:hover {
+.navLink:hover {
     color: #d1a054;
 }
 
-/* Ana Başlık */
-h1 {
+/* Main Title */
+.mainTitle {
     font-size: 2.5rem;
     text-align: center;
     color: #d1a054;
     margin: 20px 0;
+    font-family: 'Dancing Script';
 }
 
 /* Service Days */
@@ -72,53 +78,52 @@ h1 {
     text-align: center;
     font-size: 1.5rem;
     color: #6b4f4b;
+    font-family: 'Dancing Script';
 }
 
-/* Açıklama */
-.aciklama {
+/* Description */
+.description {
     gap: 20px;
     padding: 20px;
     margin: 10px auto;
     background-color: #f9f5eb;
     color: #4b3f3b;
     text-align: center;
-    font-family: 'Dancing Script', cursive;
+    font-size: medium;
 }
 
-.aciklama p {
-    margin: 10px 0;
-    font-size: 1.5rem;
-}
-
-.aciklama span {
+.highlight {
     color: #d1a054;
+    font-family: 'Dancing Script';
+    font-size:x-large;
 }
 
-/* Fotoğraf Galerisi */
+/* Photo Gallery */
 .card {
     text-align: center;
     margin: 30px 0;
 }
 
-.card h3 {
+.cardTitle {
     font-size: 2rem;
     color: #d1a054;
     margin-bottom: 10px;
+    font-family: 'Dancing Script';
 }
 
-.card p {
+.cardDescription {
     font-size: 1.5rem;
     color: #4b3f3b;
 }
 
-.images {
+.imageGallery {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-.images img {
+.image {
     width: 250px;
     height: 250px;
     object-fit: cover;
@@ -127,7 +132,7 @@ h1 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.images img:hover {
+.image:hover {
     transform: scale(1.05);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
@@ -153,7 +158,7 @@ h1 {
     gap: 10px;
 }
 
-.social a {
+.socialLink {
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -164,66 +169,67 @@ h1 {
     transition: color 0.3s ease;
 }
 
-.social a:hover {
+.socialLink:hover {
     color: #f4f1e6;
 }
 
-.social i {
+.socialIcon {
     font-size: 1rem;
     margin-right: 5px;
     color: #d1a054;
 }
 
-.social a:hover i {
+.socialLink:hover .socialIcon {
     color: #f4f1e6;
 }
 
-/* Calisma Takvimi */
-.calismatakvimi {
+/* Work Schedule */
+.workSchedule {
     text-align: left;
 }
 
-.calismatakvimi ul {
+.workScheduleList {
     list-style: none;
     padding: 0;
 }
 
-.calismatakvimi li {
-    font-size: 1.2rem;
+.scheduleHeader {
+    font-size: 1.4rem;
     font-weight: bold;
     color: #d1a054;
-    font-family: "Font Awesome 5 Free"
 }
 
-.calismatakvimi li:not(:first-child) {
+.scheduleDay {
+    font-size: 1.2rem;
     color: #f4f1e6;
-    font-weight: normal;
 }
-.bosluk{
+
+
+.space {
     background-color: #6b4f4b;
     height: 2.5rem;
 }
 
-/* Responsive Tasarım */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .navbar a {
+    .navLink {
         font-size: 1rem;
     }
 
-    .card h3 {
+    .cardTitle {
         font-size: 1.8rem;
     }
 
-    .card p {
+    .cardDescription {
         font-size: 1rem;
     }
 
-    .images img {
+    .image {
         width: 200px;
         height: 200px;
     }
 
-    .aciklama {
+    .description {
         grid-template-columns: 1fr;
     }
 
@@ -232,7 +238,7 @@ h1 {
         text-align: center;
     }
 
-    .calismatakvimi {
+    .workSchedule {
         text-align: center;
     }
 }
