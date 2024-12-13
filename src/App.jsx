@@ -8,6 +8,7 @@ import MenuPage from "./MenuPage";
 import Login from "./Login";
 import AdminPage from "./AdminPage";
 import HomePage from "./HomePage";
+import Konaklama from "./Konaklama";
 
 const initialData = [
   {
@@ -245,6 +246,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/menu" element={<MenuPage data={data} />} />
+        <Route path="/konaklama" element={<Konaklama/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/admin" element={<AdminPage data={data} setData={setData} />} />
       </Routes>

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import "./menu.css";
 import { useNavigate } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export default function MenuPage({ data}) {
     const navigate = useNavigate();
@@ -10,9 +11,15 @@ export default function MenuPage({ data}) {
   return (
     <div className="menu-page">
       <div className="menu-container">
+      <div className="navbar" style={{backgroundColor:"#e9e5df", margin:"0 0 10px 0"}}>
+        <Link to="/" style={{color:"#4b3f3b"}}>Anasayfa</Link>
+        <Link to="/menu" style={{color:"#4b3f3b"}}>Menü</Link>
+        <Link to="/konaklama" style={{color:"#4b3f3b"}}>Konaklama</Link>
+      </div>
         <header className="menu-header">
           <img className="menu-logo" src="/assets/logo.jpeg" alt="Mest-logo" />
           <h1 className="menu-title">MEST MENU</h1>
+          
         </header>
         {data.map((section) => (
           <div key={section.header} className="section">

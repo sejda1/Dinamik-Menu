@@ -1,0 +1,16 @@
+body{
+    background-color: #f9f5eb;
+    font-family: 'Dancing Script', cursive;
+}
+h1{
+   
+    font-weight: bold;
+}
+.aciklama {
+    gap: 20px;
+    padding: 20px;
+    margin: 10px auto;
+    color: #4b3f3b;
+    text-align: center;
+    font-size: 1.5rem;
+}

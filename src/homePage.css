@@ -1,0 +1,238 @@
+/* Genel Stil */
+body {
+    font-family: 'Dancing Script', cursive;
+    background-color: #f4f1e6;
+    color: #4b3f3b;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 30px 0;
+    background-color: #6b4f4b;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    animation: logoBounce 2s infinite ease-in-out;
+}
+
+.header h1 {
+    font-size: 3rem;
+    color: #d1a054;
+    margin-top: 10px;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Logo Animasyonu */
+@keyframes logoBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #4b3f3b;
+    padding: 10px 0;
+    width: 100%;
+    margin:0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #f4f1e6;
+    font-size: 1.2rem;
+    padding: 0 15px;
+    transition: color 0.3s ease;
+    font-family: "Font Awesome 5 Free"
+}
+
+.navbar a:hover {
+    color: #d1a054;
+}
+
+/* Ana Başlık */
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #d1a054;
+    margin: 20px 0;
+}
+
+/* Service Days */
+.serviceDays {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #6b4f4b;
+}
+
+/* Açıklama */
+.aciklama {
+    gap: 20px;
+    padding: 20px;
+    margin: 10px auto;
+    background-color: #f9f5eb;
+    color: #4b3f3b;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+.aciklama p {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.aciklama span {
+    color: #d1a054;
+}
+
+/* Fotoğraf Galerisi */
+.card {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.card h3 {
+    font-size: 2rem;
+    color: #d1a054;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1.5rem;
+    color: #4b3f3b;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.images img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+    background-color: #4b3f3b;
+    color: #f4f1e6;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+/* Social Media Section */
+.social {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.social a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #d1a054;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social a:hover {
+    color: #f4f1e6;
+}
+
+.social i {
+    font-size: 1rem;
+    margin-right: 5px;
+    color: #d1a054;
+}
+
+.social a:hover i {
+    color: #f4f1e6;
+}
+
+/* Calisma Takvimi */
+.calismatakvimi {
+    text-align: left;
+}
+
+.calismatakvimi ul {
+    list-style: none;
+    padding: 0;
+}
+
+.calismatakvimi li {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #d1a054;
+    font-family: "Font Awesome 5 Free"
+}
+
+.calismatakvimi li:not(:first-child) {
+    color: #f4f1e6;
+    font-weight: normal;
+}
+.bosluk{
+    background-color: #6b4f4b;
+    height: 2.5rem;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .navbar a {
+        font-size: 1rem;
+    }
+
+    .card h3 {
+        font-size: 1.8rem;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+
+    .images img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .aciklama {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .calismatakvimi {
+        text-align: center;
+    }
+}
