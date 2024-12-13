@@ -4,11 +4,11 @@ import {
   Routes,
 } from "react-router-dom";
 import {useState, useEffect} from 'react';
-import MenuPage from "./MenuPage";
-import Login from "./Login";
-import AdminPage from "./AdminPage";
-import HomePage from "./HomePage";
-import Konaklama from "./Konaklama";
+import MenuPage from "./pages/menu/MenuPage";
+import Login from "./pages/login/Login";
+import AdminPage from "./pages/admin/AdminPage";
+import HomePage from "./pages/home/HomePage";
+import Konaklama from "./pages/konaklama/Konaklama";
 
 const initialData = [
   {
