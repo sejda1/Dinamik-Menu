@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 export default function Konaklama() {
     return (
         <div className={styles.konaklama}>
-            <div className={styles.navbar}>
-                <Link to="/">Anasayfa</Link>
-                <Link to="/menu">Menü</Link>
-                <Link to="/konaklama">Konaklama</Link>
-            </div>
+             <div className={styles.navbar}>
+        <Link className={styles.navLink} to="/">Anasayfa</Link>
+        <Link className={styles.navLink} to="/menu">Menü</Link>
+        <Link className={styles.navLink} to="/konaklama">Konaklama</Link>
+      </div>
             <h1 className={styles.title}>Konaklama</h1>
             <p className={styles.aciklama}>
                 Kafemizin üst katında, tatil ya da kısa süreli konaklama için ideal apart dairelerimiz bulunmaktadır.<br />
