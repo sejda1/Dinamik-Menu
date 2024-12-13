@@ -182,7 +182,6 @@
     transition: background-color 0.3s ease, transform 0.3s ease;
     position: fixed; /* Sabit pozisyon */
     bottom: 35px; /* Sayfanın altından 30px mesafe */
-    right: 30px;  /* Sayfanın sağından 30px mesafe */
     z-index: 1000; /* Diğer öğelerin üzerinde görünmesini sağlar */
   }
   
