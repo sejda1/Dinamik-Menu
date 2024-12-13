@@ -68,15 +68,15 @@ export default function HomePage() {
       href="https://www.instagram.com/mestigneada/"
       target="_blank"
       rel="noopener noreferrer"
-      className={styles.socialLink}  // className düzeltildi
+      className={styles.socialLink}  
     >
-      <i className={`fa fa-instagram ${styles.socialIcon}`} /> /mestigneada
+      <i className={`fab fa-instagram ${styles.socialIcon}`} /> /mestigneada
     </a>
     <a
       href="https://www.google.com/maps/dir/..."
       target="_blank"
       rel="noopener noreferrer"
-      className={styles.socialLink}  // className düzeltildi
+      className={styles.socialLink} 
     >
       <i className={`fas fa-map-marker-alt ${styles.socialIcon}`} /> Yeni Mahalle, Demirköy Caddesi No:8A <br />İğneada/Demirköy/Kırklareli
     </a>
