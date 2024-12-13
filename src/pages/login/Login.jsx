@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import logo from '/assets/logo.jpeg';
-import styles from "./login.module.css";
+import styles from "./login.module.css"; 
 
 export default function Login() {
   const [username, setUsername] = useState("");
