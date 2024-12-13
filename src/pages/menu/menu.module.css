@@ -51,12 +51,31 @@
     animation: fadeIn 1s ease-out;
   }
   
-  .menuLogo {
-    width: 15rem;
-    height: 15rem;
-    border-radius: 1000px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+/* Menü logosu için stil */
+.menuLogo {
+    width: 100px;   /* Logo boyutunu ayarlayın */
+    height: 100px;
+    border-radius: 50%;  /* Yuvarlak logo */
+    object-fit: cover;   /* Görüntüyü logo kutusuna uygun şekilde yerleştirin */
+    animation: rotateCoin 2s infinite linear;  /* Animasyonu ekleyin */
+    transform-style: preserve-3d; /* 3D dönüşüm için */
+    transform-origin: center; /* Dönüşüm merkezini ortada yap */
   }
+  
+  /* Madeni para dönüş animasyonu */
+  @keyframes rotateCoin {
+    0% {
+      transform: rotateY(0deg);  /* Başlangıç: hiç dönmemiş */
+    }
+    50% {
+      transform: rotateY(180deg);  /* Yarı dönüş */
+    }
+    100% {
+      transform: rotateY(360deg);  /* Tam dönüş */
+    }
+  }
+  
+  
   
   .menuTitle {
     font-family: "Dancing Script";
