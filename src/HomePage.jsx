@@ -7,7 +7,7 @@ export default function HomePage() {
   const serviceDays = differenceInDays(new Date(), new Date(2023, 5, 25));
   const currentDay = new Date().toLocaleString('tr-TR', { weekday: 'long' });
 
-  return (
+  return ( 
     <>
       <div className="header">
         <img className="logo" src={logo} alt="Mest Cafe Logo" />
