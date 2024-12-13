@@ -10,8 +10,8 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    const ADMIN_USERNAME = import.meta.env.VITE_ADMIN_USERNAME;
-    const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
+    const ADMIN_USERNAME = "admin";
+    const ADMIN_PASSWORD = "mest2022";
 
     if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
       navigate("/admin");
