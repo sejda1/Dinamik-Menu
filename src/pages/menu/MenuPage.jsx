@@ -66,18 +66,23 @@ export default function MenuPage({ data }) {
 
         <footer className={styles.menuFooter}>
           <p className={styles.footerText}>Afiyet Olsun!</p>
-          <button 
-            className={styles.orderButton} 
+          <button
+            className={styles.orderButton}
             onClick={handleClick}
           >
             &#127869;
           </button>
-          <button 
-            className={styles.scrollToTopButton} 
+
+
+          <button
+            className={styles.scrollToTopButton}
             onClick={handleScrollToTop}
           >
-            ↑ 
+            ↑
           </button>
+
+
+
         </footer>
       </div>
     </div>
